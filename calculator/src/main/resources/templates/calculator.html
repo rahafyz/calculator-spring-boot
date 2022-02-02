@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>calculator</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<div class="container" style="width: 400px; margin: auto;">
+  <h1>Calculator</h1>
+<form action="#" th:action="@{/calculator}" th:object="${operation}" method="POST">
+  <input type="text" th:field="*{num1}" />
+  <input type="text" th:field="*{num2}"/>
+  <p>
+    <input type="submit" class="button" name="add" value="+"/>
+    <input type="submit" class="button" name="subtract" value="-"/>
+    <input type="submit" class="button" name="multiply" value="*"/>
+    <input type="submit" class="button" name="divide" value="/"/>
+    <input type="submit" class="button" name="power" value="^"/>
+  </p>
+
+  <h1>Advanced operations:</h1><br><br>
+  <input type="text" th:field="*{num3}" />
+  <p>
+    <input type="submit" class="button" name="sqrt" value=&#8730 />
+  </p>
+  <h1>Median and avarage</h1>
+      <input type="text" th:field="*{arr1}" style="width: 57px;" />
+      <input type="text" th:field="*{arr2}" style="width: 57px;" />
+      <input type="text" th:field="*{arr3}" style="width: 57px;" />
+      <input type="text" th:field="*{arr4}" style="width: 57px;"/>
+      <input type="text" th:field="*{arr5}" style="width: 57px;"/>
+      <p>
+          <input type="submit" class="button" name="mean" value="avarage">
+          <input type="submit" class="button" name="median" value="median">
+      </p>
+  <h1><p th:text="'result: ' + ${result}"/></h1>
+</form>
+</div>
+</body>
+</html>
+
